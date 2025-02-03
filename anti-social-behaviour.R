@@ -6,7 +6,8 @@ crime_survey <- read_sav("data/crime-survey-csew1314teachingopen.sav")
 print(summary(crime_survey$antisocx))
 
 #Unit 2
-victims_factor <- factor(crime_survey$bcsvictim, levels = c(0, 1), labels = c("Not Experienced", "Experienced"))
+victims_mapped <- ifelse(crime_survey$bcsvictim == 0, "Not Experienced", "Experienced")
+victims_factor <- victims_as_factor <- as_factor(victims_mapped)
 victims_frequency <- table(victims_factor)
 print(victims_frequency)
 
