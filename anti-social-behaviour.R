@@ -7,7 +7,7 @@ print(summary(crime_survey$antisocx))
 
 #Unit 2
 victims_mapped <- ifelse(crime_survey$bcsvictim == 0, "Not Experienced", "Experienced")
-victims_factor <- victims_as_factor <- as_factor(victims_mapped)
+victims_factor <- as_factor(victims_mapped)
 victims_frequency <- table(victims_factor)
 print(victims_frequency)
 
