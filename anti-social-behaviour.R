@@ -3,6 +3,7 @@ library(gridExtra)
 
 #Unit 1
 crime_survey <- read_sav("data/crime-survey-csew1314teachingopen.sav")
+
 print(summary(crime_survey$antisocx))
 
 #Unit 2
@@ -21,3 +22,6 @@ bp <- barplot(
 )
 text(x = bp, y = victims_frequency, labels = victims_frequency, pos = 3)
 
+#Unit 3
+crime_75victim <- subset(crime_survey, agegrp7 == 7 & bcsvictim == 1)
+View(crime_75victim)
